@@ -7,7 +7,6 @@
 //Constructor Functions should start with a Capital Letter
 //Constructors build objects - this function builds a vehicle array
 
-
 function Vehicle(name, numOfWheels, numOfPassengers, speed){
 	const vehiclePrototype = {
 		accelerate: function(velChg = 1) {
@@ -43,6 +42,13 @@ function Vehicle(name, numOfWheels, numOfPassengers, speed){
 }
 
 const v1 = Vehicle('sedan', 4,"",90);
+
+Vehicle.prototype.accelerate = function(velChg = 1) {
+	this.speed += velChg;
+	return this.speed
+};
+
+const v2 = new Vehicle('bus', 0,90,0);
 
 </script>
 <body>
