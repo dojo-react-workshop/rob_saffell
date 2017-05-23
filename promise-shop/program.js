@@ -1,1 +1,3 @@
-setTimeout(function() { console.log('Timed Out!!')}, 300);
+'use strict'
+
+setTimeout(function() { console.log('TIMED OUT!')}, 300);
