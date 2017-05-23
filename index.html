@@ -1,0 +1,50 @@
+<!DOCTYPE=HTML>
+<html>
+<head>
+</head>
+<script>
+
+//Constructor Functions should start with a Capital Letter
+//Constructors build objects - this function builds a vehicle array
+
+
+function Vehicle(name, numOfWheels, numOfPassengers, speed){
+	const vehiclePrototype = {
+		accelerate: function(velChg = 1) {
+			this.speed += velChg;
+			return this.speed;
+		},
+		makeNoise: function(){
+			if (this.name === "sedan") {
+				return "beep  beep";
+			} else if (this.name === "bus") {
+				return "Honk honk";
+			} else  if (this.name === 'bike') {
+				return "ring ring";
+			} else {return "dakka dakka"}
+		},
+		pickUpPeople: function(people = 0) {
+			vehicle.numOfPassengers += people;
+			vehicle.speed = 0;
+			console.log(vehicle.makeNoise());	
+			return numOfPassengers;
+		}
+	};	
+	//Create the object
+	const vehicle = Object.create(vehiclePrototype); 
+
+		vehicle.name = name;
+		vehicle.numOfPassengers = numOfPassengers;
+		vehicle.speed = speed;
+
+
+	//Return the object - these are the minimums of a COnstructor
+	return vehicle;
+}
+
+const v1 = Vehicle('sedan', 4,"",90);
+
+</script>
+<body>
+</body>
+</html>
