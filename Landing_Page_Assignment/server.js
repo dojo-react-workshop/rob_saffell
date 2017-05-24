@@ -11,11 +11,12 @@ var server = http.createServer(function(request, response){
 	console.log(request.url);
 	if (request.url == "/") {
 		
-			fs.readFile('server.html','utf8', function(err, data) {
+			fs.readFile('index.html','utf8', function(err, data) {
 				if (!err) {
 	
 					response.end(data);}
 				else {
+					console.log(err);
 					response.writeHead(404);
 					response.end("Not Found");
 				}
@@ -23,7 +24,7 @@ var server = http.createServer(function(request, response){
 		
 		} else if (request.url == "/Post?") {
 
-			response.end("You submitted!");
+			response.end("<html><script>window.location='http://localhost:8000/ninjas'</script></html>");
 		} else if (request.url == "/dojos/Post?") {
 
 			response.end("You submitted!");
