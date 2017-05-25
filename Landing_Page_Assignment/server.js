@@ -29,16 +29,19 @@ var server = http.createServer(function(request, response){
 
 			response.end("You submitted!");
 		} else if (request.url == "/ninjas") {
-			fs.readFile('ninjas.html','utf8', function(err, data) {
-				if (!err) {
-	
-					response.end(data);}
-				else {
+				fs.readFile('ninjas.html','utf8', function(err, data) {
+					if (!err) {
+						response.write(data);
+						response.end("<html><script>window.open('https://en.wikipedia.org/wiki/Ninja');</script></html>");
+					
+					} else {
+					
+					console.log(err);
 					response.writeHead(404);
 					response.end("Not Found");
-				}
-			});
-		
+					}
+				});
+
 		} else if (request.url == "/dojos/new") {
 			fs.readFile('dojos.html','utf8', function(err, data) {
 				if (!err) {
