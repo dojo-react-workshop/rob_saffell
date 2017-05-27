@@ -1,0 +1,75 @@
+<!DOCTYPE = HTML>
+<html>
+<head>
+	<meta>
+	<title>Survey Form</title>
+	<h1>Survey Form</h1>
+</head>
+
+<script>
+function changey (user_name, job, comp, index) {
+
+	var nameStr = "'" + index + "-0";
+	var jobStr = "'" + index + "-2";
+	var compStr = "'" + index + "-3";
+	var divStr = "'" + index + "'";
+
+		console.log(nameStr + " " + jobStr + " " + compStr + " " + divStr);
+
+
+	var newHTML = "";
+
+				newHTML += 'Name: <input type="text" id="' + index + '-0" value="' + user_name + '"></input></label><br>';
+				newHTML += 'Job: <input type="text" id="' + index + '-0" value="' + job + '"></input></label><br>';
+				newHTML += 'Company: <input type="text" id="' + index + '-0" value="' + comp + '"></input></label><br>';
+	
+	console.log(newHTML);
+
+	document.getElementById(index).innerHTML = newHTML;
+
+};
+
+var htmlString = <%- JSON.stringify(htmlString) %>;
+
+
+
+</script>
+
+<body><img src="title.png"/>
+		
+	<form action="/result" method="post">
+
+		<table style="background-color: grey" align="center">
+			<tr><td></td></tr>
+			<tr><br></tr><%- htmlString %>
+
+			<tr>
+			<td align="left">Name: </td><td align="left"><input type="text" name="user_name" value=""></td>
+			</tr>
+
+			<tr><br></tr>
+		
+			<tr>
+			<td align="left">Dojo Location:</td><td align="left">
+			<select name="location">
+			<option>Seattle</option>
+			<option>Northwestern Mutual</option>
+			<option>Los Angeles</option>
+			</select>
+			</td>
+			</tr>
+
+			<tr><br></tr>
+			
+			<tr>
+			<td align="left">Favorite Language:</td><td align="left"><input type="text" name="lang" value=""></td>
+			</tr>
+			<tr>
+			<td></td><td align="right"><input type="submit" value="Submit" method="post"></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+
+</html>

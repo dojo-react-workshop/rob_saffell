@@ -1,0 +1,35 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Student Information</title>
+</head>
+
+<body>
+		
+	<form action="/result" method="post">
+
+		<table style="background-color: grey" align="center">
+			<tr><td><p><h3>Your submission</h3></p></td></tr>
+			<tr><br></tr><%-sendNames %>
+
+			<tr>
+			<td align="left">Name: </td><td align="left"><input type="text" name="user_name" value=<%-name%>></td>
+			</tr>
+
+			<tr><br></tr>
+		
+			<tr>
+			<td align="left">Dojo Location: </td><td align="left"><input type="text" value=<%-location%>></td>
+			</tr>
+
+			<tr><br></tr>
+			
+			<tr>
+			<td align="left">Favorite Language: </td><td align="left"><input type="text" name="lang" value=<%-lang%>></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>
