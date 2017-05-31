@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Voting</title>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+  </head>
+  <body>
+        
+        <div id="react">
+        </div>
+
+
+        <script>
+            'use strict'
+
+            const SquareComponent1a = (props) => {
+              const {text} = props;
+              const style = {style: {backgroundColor: 'white', color: 'blue', display: 'table-cell', width: '50px', height: '50px' }};
+
+              return React.createElement('button', style, text);
+            }
+
+            const SquareComponent1b = (props) => {
+              const {text} = props;
+              const style = {style: {backgroundColor: 'white', color: 'blue', display: 'table-cell', width: '100px', height: '50px' }};
+              return React.createElement('label', style, text);
+            }
+            
+            const SquareComponent1c = (props) => {
+              const {text} = props;
+              const style = {style: {backgroundColor: 'white', color: 'blue', display: 'table-cell', width: '100px', height: '50px' }};
+              return React.createElement('label', style, text);
+            }
+
+            var container = document.getElementById('react');
+            const SquareComponent1 = (props) => {
+              const {text} = props;
+              const style = {style: {backgroundColor: 'white', color: 'white', display: 'table-row', width: '150px', height: '50px'}};
+              return React.createElement('div', style, text,
+                React.createElement(SquareComponent1c, { text: '0' }),
+                React.createElement(SquareComponent1b, { text: 'Vue' }),
+                React.createElement(SquareComponent1a, { text: 'Vote' })
+                );
+            }            
+
+            const SquareComponent2a = (props) => {
+              const {text} = props;
+              const style = {style: {backgroundColor: 'white', color: 'blue', display: 'table-cell', width: '50px', height: '50px' }};
+              return React.createElement('button', style, text);
+            }
+
+            const SquareComponent2b = (props) => {
+              const {text} = props;
+              const style = {style: {backgroundColor: 'white', color: 'blue', display: 'table-cell', width: '100px', height: '50px' }};
+              return React.createElement('label', style, text);
+            }
+
+            const SquareComponent2c = (props) => {
+              const {text} = props;
+              const style = {style: {backgroundColor: 'white', color: 'blue', display: 'table-cell', width: '100px', height: '50px' }};
+              return React.createElement('label', style, text);
+            }
+
+            const SquareComponent2 = (props) => {
+              const {text} = props;
+              const style = {style: {backgroundColor: 'white', color: 'blue', display: 'table-row', width: '150px', height: '50px'}};
+              return React.createElement('div', style, text,
+
+                React.createElement(SquareComponent2c, { text: '0' }),               
+                React.createElement(SquareComponent2b, { text: 'React' }),
+                React.createElement(SquareComponent2a, { text: 'Vote' }),
+
+                );
+            }
+
+            const SquareComponent3a = (props) => {
+              const {text} = props;
+              const style = {style: {backgroundColor: 'white', color: 'blue', display: 'table-cell', width: '50px', height: '50px' }};
+              return React.createElement('button', style, text);
+            }
+
+            const SquareComponent3b = (props) => {
+              const {text} = props;
+              const style = {style: {backgroundColor: 'white', color: 'blue', display: 'table-cell', width: '100px', height: '50px' }};
+              return React.createElement('label', style, text);
+            }
+
+            const SquareComponent3c = (props) => {
+              const {text} = props;
+              const style = {style: {backgroundColor: 'white', color: 'blue', display: 'table-cell', width: '100px', height: '50px' }};
+              return React.createElement('label', style, text);
+            }
+
+            const SquareComponent3 = (props) => {
+              const {text} = props;
+              const style = {style: {backgroundColor: 'white', color: 'green', display: 'table-row', width: '150px', height: '50px'}};
+              return React.createElement('div', style, text,
+                React.createElement(SquareComponent2c, { text: '0' }),               
+                React.createElement(SquareComponent2b, { text: 'Angular' }),
+                React.createElement(SquareComponent2a, { text: 'Vote' }),
+
+
+                );
+            };
+            ReactDOM.render(
+                React.createElement(
+                  'div', { style: { display: 'table', width: '150px'} } ,
+                    React.createElement(SquareComponent1),
+                    React.createElement(SquareComponent2),
+
+                    React.createElement(SquareComponent3)
+                  ),
+                container
+            );
+        </script>
+  </body>
+</html>

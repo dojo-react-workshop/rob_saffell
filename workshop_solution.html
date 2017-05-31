@@ -1,0 +1,30 @@
+<! DOCTRYPE=HTML>
+<html>
+	<head>
+			<title></title>
+			<script src="node_modules/react/dist/react.js">
+			</script>
+
+			<div id="root">
+
+			</div>
+<script>
+
+const jsContainer = document.getElementById("js");
+const reactContainer = document.getElementById("react");
+
+jsContainer.innerHTML = '<div>Hello JS	</div>';
+
+ReactDOM.render(
+	React.createElement('div', {className: 'demo'}, 'Hello React'
+	), reactContainer);
+
+</script>
+
+<div id="js"></div>
+<div id="react"></div>
+
+	</head>
+
+
+</html>
